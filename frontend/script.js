@@ -10,7 +10,7 @@ document.getElementById('prefsForm')?.addEventListener('submit', async (e) => {
   transport: +form.transport.value,
   };
 
-  const res = await fetch('http://localhost:3000/match', {
+  const res = await fetch('https://neighborfit-backend-ct8d.onrender.com/match', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(prefs)
