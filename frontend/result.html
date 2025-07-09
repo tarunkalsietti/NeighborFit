@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Match Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Top Neighborhood Matches</h2>
+  <div id="results"></div>
+
+  <script>
+    const results = JSON.parse(localStorage.getItem('matches')) || [];
+    const resultsDiv = document.getElementById('results');
+
+    results.forEach(n => {
+      resultsDiv.innerHTML += `
+        <div class="card">
+          <h3>${n.name}</h3>
+      <ul>
+  <li>🛡️ Safety: ${n.safety}</li>
+  <li>🌃 Nightlife: ${n.nightlife}</li>
+  <li>🏫 Schools: ${n.schools}</li>
+  <li>💰 Affordability: ${n.affordability}</li>
+  <li>🌳 Greenery: ${n.greenery}</li>
+  <li>🚉 Public Transport: ${n.transport}</li>
+</ul>
+
+
+          <strong>Score: ${n.score}</strong>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

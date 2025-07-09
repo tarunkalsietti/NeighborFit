@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeighborFit Survey</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container glass">
+  <header>
+    <h1>🏙️ Lifestyle Preference Survey</h1>
+    <p>Help us understand what matters to you in a neighborhood.</p>
+  </header>
+
+  <form id="prefsForm">
+
+    <div class="input-group">
+      <label for="safety">🛡️ Safety</label>
+      <p class="description">How important is neighborhood safety?</p>
+      <input type="range" id="safety" name="safety" min="1" max="10" value="5" oninput="updateValue(this)">
+      <span class="slider-value" id="safety-value">5</span>
+    </div>
+
+    <div class="input-group">
+      <label for="nightlife">🌃 Nightlife</label>
+      <p class="description">Do you want bars, clubs, and an active evening scene nearby?</p>
+      <input type="range" id="nightlife" name="nightlife" min="1" max="10" value="5" oninput="updateValue(this)">
+      <span class="slider-value" id="nightlife-value">5</span>
+    </div>
+
+    <div class="input-group">
+      <label for="schools">🏫 Schools</label>
+      <p class="description">How important are good schools nearby (even if you don't have kids)?</p>
+      <input type="range" id="schools" name="schools" min="1" max="10" value="5" oninput="updateValue(this)">
+      <span class="slider-value" id="schools-value">5</span>
+    </div>
+
+    <div class="input-group">
+      <label for="affordability">💰 Affordability</label>
+      <p class="description">Do you prefer a more affordable neighborhood or don't mind higher cost?</p>
+      <input type="range" id="affordability" name="affordability" min="1" max="10" value="5" oninput="updateValue(this)">
+      <span class="slider-value" id="affordability-value">5</span>
+    </div>
+
+    <div class="input-group">
+  <label for="greenery">🌳 Greenery</label>
+  <p class="description">How important is access to parks, trees, and green spaces?</p>
+  <input type="range" id="greenery" name="greenery" min="1" max="10" value="5" oninput="updateValue(this)">
+  <span class="slider-value" id="greenery-value">5</span>
+</div>
+
+<div class="input-group">
+  <label for="transport">🚉 Public Transport</label>
+  <p class="description">How important is access to metros, buses, or trains?</p>
+  <input type="range" id="transport" name="transport" min="1" max="10" value="5" oninput="updateValue(this)">
+  <span class="slider-value" id="transport-value">5</span>
+</div>
+
+    <button type="submit" class="cta">Find My Match</button>
+  </form>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  function updateValue(slider) {
+    document.getElementById(`${slider.id}-value`).textContent = slider.value;
+  }
+</script>
+
+</body>
+</html>
